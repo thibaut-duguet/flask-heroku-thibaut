@@ -89,15 +89,8 @@
                     <h3>
                         <a href="#">Community 1</a>
                     </h3>
-                    {% set community = community1[1] %}
+                    {% set community = community1[10] %}
                     <p>{{ community }} Twitter accounts, or of the accounts considered.</p>
-                    <ul>
-                    {% for name in community %}
-                        <li>{{ name }}</li>
-                    {% endfor %}
-                    </ul>
-
-
                     <div id = "keywords" class="col-md-6"></div>
                     <script type="text/javascript">
                         function test_func(result) {
@@ -117,10 +110,10 @@
                     <div id = "keywordsa" class="col-md-6"></div>
                     <script type="text/javascript">
                         function test_func(result) {
-                            var words = result[1]['words'];
+                            var words = result['words'];
                             $('#keywordsa').jQCloud(words);
                         }
-                        test_func({{ community1|safe }})
+                        test_func({{ community2|safe }})
                     </script>
                     <!--<script src = "{{ url_for('static', filename='test-jqcloud.js') }}"></script>-->
                 </div>
@@ -137,10 +130,10 @@
                     <div id = "keywordsb" class="col-md-6"></div>
                     <script type="text/javascript">
                         function test_func(result) {
-                            var words = result[2]['words'];
+                            var words = result['words'];
                             $('#keywordsb').jQCloud(words);
                         }
-                        test_func({{ community1|safe }})
+                        test_func({{ community3|safe }})
                     </script>
                     <!--<script src = "{{ url_for('static', filename='test-jqcloud.js') }}"></script>-->
                 </div>
@@ -152,10 +145,10 @@
                     <div id = "keywordsc" class="col-md-6"></div>
                     <script type="text/javascript">
                         function test_func(result) {
-                            var words = result[3]['words'];
+                            var words = result['words'];
                             $('#keywordsc').jQCloud(words);
                         }
-                        test_func({{ community1|safe }})
+                        test_func({{ community4|safe }})
                     </script>
                     <!--<script src = "{{ url_for('static', filename='test-jqcloud.js') }}"></script>-->
                 </div>
