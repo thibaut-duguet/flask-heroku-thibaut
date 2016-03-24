@@ -93,9 +93,9 @@
                     <div id = "keywords" class="col-md-6"></div>
                     <script type="text/javascript">
                         function test_func(result) {
-                            return result;
+                            console.log(result[0]);
                         }
-                        result = {{ communities|safe }}
+                        test_func({{ communities|safe }})
                     </script>
                     <script src = "{{ url_for('static', filename='test-jqcloud.js') }}"></script>
 
