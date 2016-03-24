@@ -31,10 +31,10 @@ def hello_post():
     return render_template('index1.html')
 
 
-#@app.route('/about/')
-#def about():
-#    """Render the website's about page."""
-#    return render_template('about.html')
+@app.route('/about/')
+def about():
+    """Render the website's about page."""
+    return render_template('results.html')
 
 
 ###
