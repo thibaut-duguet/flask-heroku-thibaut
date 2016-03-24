@@ -93,7 +93,7 @@
                     <div id = "keywords" class="col-md-6"></div>
                     <script type="text/javascript">
                         function test_func(result) {
-                            return result[0]['screen_names'];
+                            return result['screen_names'];
                         }
                         var result = test_func({{ community1|safe }})
                     </script>
