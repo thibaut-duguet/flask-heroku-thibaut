@@ -1,3 +1,12 @@
+function communitySize(result, i) {
+  return result[i]['screen_names'].length;
+}
+var community1Size = communitySize({{ community1|safe }},1)
+var community2Size = communitySize({{ community1|safe }},2)
+var community3Size = communitySize({{ community1|safe }},3)
+var community4Size = communitySize({{ community1|safe }},4)
+
+
 var words = [
               {text: "Lorem", weight: 13},
               {text: "Ipsum", weight: 10.5},
