@@ -1,8 +1,4 @@
-function test_func(result) {
-                            console.log(result[0]['screen_names']);
-                        }
-                        test_func({{ community1|safe }})
-
+console.log(result);
 
 var words = [
               {text: "Lorem", weight: 13},

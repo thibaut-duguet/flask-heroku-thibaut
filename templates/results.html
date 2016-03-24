@@ -91,12 +91,12 @@
                     </h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
                     <div id = "keywords" class="col-md-6"></div>
-                    <!--<script type="text/javascript">
+                    <script type="text/javascript">
                         function test_func(result) {
                             console.log(result[0]['screen_names']);
                         }
-                        test_func({{ community1|safe }})
-                    </script> -->
+                        var result = test_func({{ community1|safe }})
+                    </script>
                     <script src = "{{ url_for('static', filename='test-jqcloud.js') }}"></script>
 
                 </div>
