@@ -98,7 +98,7 @@
                         }
                         test_func({{ community1|safe }})
                     </script>
-                    <script src = "{{ url_for('static', filename='test-jqcloud.js') }}"></script>
+                    <!--<script src = "{{ url_for('static', filename='test-jqcloud.js') }}"></script>-->
 
                 </div>
                 <div class="col-md-6 portfolio-item">
@@ -107,7 +107,14 @@
                     </h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
                     <div id = "keywordsa" class="col-md-6"></div>
-                    <script src = "{{ url_for('static', filename='test-jqcloud.js') }}"></script>
+                    <script type="text/javascript">
+                        function test_func(result) {
+                            var words = result[1]['words'];
+                            $('#keywords').jQCloud(words);
+                        }
+                        test_func({{ community1|safe }})
+                    </script>
+                    <!--<script src = "{{ url_for('static', filename='test-jqcloud.js') }}"></script>-->
                 </div>
         </div>
         <!-- /.row -->
@@ -120,7 +127,14 @@
                     </h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
                     <div id = "keywordsb" class="col-md-6"></div>
-                    <script src = "{{ url_for('static', filename='test-jqcloud.js') }}"></script>
+                    <script type="text/javascript">
+                        function test_func(result) {
+                            var words = result[2]['words'];
+                            $('#keywords').jQCloud(words);
+                        }
+                        test_func({{ community1|safe }})
+                    </script>
+                    <!--<script src = "{{ url_for('static', filename='test-jqcloud.js') }}"></script>-->
                 </div>
                 <div class="col-md-6 portfolio-item">
                     <h3>
@@ -128,7 +142,14 @@
                     </h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
                     <div id = "keywordsc" class="col-md-6"></div>
-                    <script src = "{{ url_for('static', filename='test-jqcloud.js') }}"></script>
+                    <script type="text/javascript">
+                        function test_func(result) {
+                            var words = result[3]['words'];
+                            $('#keywords').jQCloud(words);
+                        }
+                        test_func({{ community1|safe }})
+                    </script>
+                    <!--<script src = "{{ url_for('static', filename='test-jqcloud.js') }}"></script>-->
                 </div>
         </div>
         <!-- /.row -->
