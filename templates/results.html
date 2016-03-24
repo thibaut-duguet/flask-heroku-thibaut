@@ -95,7 +95,7 @@
                         function test_func(result) {
                             console.log(result);
                         }
-                        test_func({{ communities|safe }})
+                        test_func({{ community1|safe }})
                     </script>
                     <script src = "{{ url_for('static', filename='test-jqcloud.js') }}"></script>
 
