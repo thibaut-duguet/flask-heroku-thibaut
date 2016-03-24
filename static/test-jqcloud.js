@@ -13,6 +13,6 @@ var words = [
               {text: "Albert", weight: 24}
                                 ];
 //$('#keywords').jQCloud(words);
-$('#keywordsa').jQCloud(words);
-$('#keywordsb').jQCloud(words);
-$('#keywordsc').jQCloud(words);
+//$('#keywordsa').jQCloud(words);
+//$('#keywordsb').jQCloud(words);
+//$('#keywordsc').jQCloud(words);
