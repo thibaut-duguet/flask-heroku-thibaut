@@ -89,7 +89,7 @@
                     <h3>
                         <a href="#">Community 1</a>
                     </h3>
-                    {% set community = community1[0]['screen_names'] %}
+                    {% set community = {{community1|safe}}[0]['screen_names'] %}
                     <p>{{ community }} Twitter accounts, or of the accounts considered.</p>
                     <ul>
                     {% for name in community %}
