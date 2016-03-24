@@ -9,6 +9,7 @@ This file creates your application.
 import os
 from flask import Flask, render_template, request, redirect, url_for
 import module_mongolab as mlab
+import json
 
 app = Flask(__name__)
 
@@ -35,7 +36,8 @@ def hello_post():
 
 @app.route('/results/<query>')
 def results(query):
-    return query
+    result = mlab.communityInfo(query)
+    return render_template('results.html', result = json.dumps(result))
 
 @app.route('/about/')
 def about():
