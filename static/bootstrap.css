@@ -6799,3 +6799,29 @@ button.close {
 #custom-search-input .glyphicon-search{
     font-size: 23px;
 }
+
+.col-md-6 {
+  margin:0 auto;
+  width:50%;
+  height:430px;
+}
+
+#demo-autosize {
+  width:80%;
+}
+
+.row {
+  display: block;
+}
+
+.container-test {
+  width: 50%;
+  height: 286px;
+}
+
+div#keywords
+div#keywordsa {
+  width: 100%;
+  margin-right: 50px;
+
+}
