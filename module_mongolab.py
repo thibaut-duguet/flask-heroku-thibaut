@@ -13,6 +13,12 @@ def uploadToMongolab(text):
     if line != "\n":
       db.twitter_query.insert_one(line)
 
+def alreadyInCollection(text):
+    if db.twitter_query.find({'query': text}).count() > 0:
+        return True
+    else:
+        return False
+
 #Download query result from Mongolab (replace collection by collection name before running)
 #def downloadFromMongolab():
 #    results = db.collection.find()

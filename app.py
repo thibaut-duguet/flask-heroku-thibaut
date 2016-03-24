@@ -27,8 +27,11 @@ def hello():
 @app.route('/', methods=['POST'])
 def hello_post():
     text = request.form['text']
-    mlab.uploadToMongolab(text)
-    return render_template('index1.html')
+    if alreadyInCollection(text):
+        return render_template('about.html')
+    else:
+        mlab.uploadToMongolab(text)
+        return render_template('index1.html')
 
 
 @app.route('/about/')
