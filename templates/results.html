@@ -89,8 +89,8 @@
                     <h3>
                         <a href="#">Community 1</a>
                     </h3>
-                    {% set community_size = community1['screen_names']|length %}
-                    <p>{{ community_size }}Twitter accounts, or of the accounts considered.</p>
+                    {% set community = community1[0]['screen_names'] %}
+                    <p>{{ community_size|length }} Twitter accounts, or of the accounts considered.</p>
                     <div id = "keywords" class="col-md-6"></div>
                     <script type="text/javascript">
                         function test_func(result) {
