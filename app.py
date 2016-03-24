@@ -28,11 +28,14 @@ def hello():
 def hello_post():
     text = request.form['text']
     if mlab.alreadyInCollection(text):
-        return render_template('results.html')
+        return redirect(url_for('results', query = text))
     else:
         mlab.uploadToMongolab(text)
         return render_template('index1.html')
 
+@app.route('/results/<query>')
+def results(query):
+    return query
 
 @app.route('/about/')
 def about():
