@@ -95,7 +95,7 @@
                         function test_func(result) {
                             console.log(result);
                         }
-                        test_func({{ data|safe }})
+                        test_func({{ result|safe }})
                     </script>
                     <script src = "{{ url_for('static', filename='test-jqcloud.js') }}"></script>
 
