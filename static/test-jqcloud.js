@@ -1,10 +1,7 @@
-function communitySize(result, i) {
-  return result[i]['screen_names'].length;
-}
-var community1Size = communitySize({{ community1|safe }},1)
-var community2Size = communitySize({{ community1|safe }},2)
-var community3Size = communitySize({{ community1|safe }},3)
-var community4Size = communitySize({{ community1|safe }},4)
+function test_func(result) {
+                            console.log(result[0]['screen_names']);
+                        }
+                        test_func({{ community1|safe }})
 
 
 var words = [
