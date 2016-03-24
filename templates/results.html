@@ -101,7 +101,7 @@
                     <div id = "keywords" class="col-md-6"></div>
                     <script type="text/javascript">
                         function test_func(result) {
-                            var words = result[0]['words'];
+                            var words = result['words'];
                             $('#keywords').jQCloud(words);
                         }
                         test_func({{ community1|safe }})
