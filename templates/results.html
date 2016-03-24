@@ -77,7 +77,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Twitter Communities
-                    <small>for {{query}}</small>
+                    <small>{{query}}</small>
                 </h1>
             </div>
         </div>
@@ -89,7 +89,8 @@
                     <h3>
                         <a href="#">Community 1</a>
                     </h3>
-                    <p>Twitter accounts, or of the accounts considered.</p>
+                    {% community_size = community1['screen_names']|length %}
+                    <p>{{ community_size }}Twitter accounts, or of the accounts considered.</p>
                     <div id = "keywords" class="col-md-6"></div>
                     <script type="text/javascript">
                         function test_func(result) {
