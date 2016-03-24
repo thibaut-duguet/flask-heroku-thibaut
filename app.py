@@ -28,7 +28,7 @@ def hello():
 def hello_post():
     text = request.form['text']
     if mlab.alreadyInCollection(text):
-        return render_template('about.html')
+        return render_template('results.html')
     else:
         mlab.uploadToMongolab(text)
         return render_template('index1.html')
