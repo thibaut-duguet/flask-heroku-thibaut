@@ -24,9 +24,13 @@ def getCommunityInfo(text):
     for document in results_cursor:
         return document
 
-def communityInfo(text, i):
+def communityInfo(text,i):
     raw_result = getCommunityInfo(text)
-    return raw_result['communities']
+    community_i = raw_result['communities'][i]
+    result = {}
+    result['size'] = len(community_i['screen_names'])
+    result['words'] = community_i['words']
+    return result
 
 
 #Download query result from Mongolab (replace collection by collection name before running)
