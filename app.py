@@ -36,8 +36,12 @@ def hello_post():
 
 @app.route('/results/<query>')
 def results(query):
-    result = mlab.communityInfo(query)
-    return render_template('results.html', result = json.dumps(result))
+    community1 = mlab.communityInfo(query,0)
+    community2 = mlab.communityInfo(query,1)
+    community3 = mlab.communityInfo(query,2)
+    community4 = mlab.communityInfo(query,3)
+    return render_template('results.html', community1 = json.dumps(community1), community2 = json.dumps(community2),
+        community3 = json.dumps(community3), community4 = json.dumps(community4))
 
 @app.route('/about/')
 def about():
