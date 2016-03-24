@@ -93,9 +93,10 @@
                     <div id = "keywords" class="col-md-6"></div>
                     <script type="text/javascript">
                         function test_func(result) {
-                            return result['screen_names'];
+                            var words = result[0]['words'];
+                            $('#keywords').jQCloud(words);
                         }
-                        var result = test_func({{ community1|safe }})
+                        test_func({{ community1|safe }})
                     </script>
                     <script src = "{{ url_for('static', filename='test-jqcloud.js') }}"></script>
 
