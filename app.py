@@ -40,13 +40,13 @@ def results(query):
     community2 = mlab.communityInfo(query,1)
     community3 = mlab.communityInfo(query,2)
     community4 = mlab.communityInfo(query,3)
-    communityPeople1 = mlab.communityPeople(query,0)
-    communityPeople2 = mlab.communityPeople(query,1)
-    communityPeople3 = mlab.communityPeople(query,2)
-    communityPeople4 = mlab.communityPeople(query,3)
+    communitySize1 = mlab.communitySize(query,0)
+    communitySize2 = mlab.communitySize(query,1)
+    communitySize3 = mlab.communitySize(query,2)
+    communitySize4 = mlab.communityPSize(query,3)
     return render_template('results.html', community1 = json.dumps(community1), community2 = json.dumps(community2),
-        community3 = json.dumps(community3), community4 = json.dumps(community4), communityPeople1 = communityPeople1,
-        communityPeople2 = communityPeople2, communityPeople3 = communityPeople3, communityPeople4 = communityPeople4,
+        community3 = json.dumps(community3), community4 = json.dumps(community4), communitySize1 = communitySize1,
+        communitySize2 = communitySize2, communitySize3 = communitySize3, communitySize4 = communitySize4,
         query = query)
 
 @app.route('/about/')

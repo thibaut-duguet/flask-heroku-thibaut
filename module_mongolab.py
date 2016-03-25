@@ -32,10 +32,10 @@ def communityInfo(text,i):
     result['words'] = community_i['words']
     return result
 
-def communityPeople(text, i):
+def communitySize(text, i):
     raw_result = getCommunityInfo(text)
     community_i = raw_result['communities'][i]
-    result = community_i['screen_names']
+    result = len(community_i['screen_names'])
     return result
 
 #Download query result from Mongolab (replace collection by collection name before running)
