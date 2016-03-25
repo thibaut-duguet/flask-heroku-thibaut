@@ -1,5 +1,4 @@
 from pymongo import MongoClient
-from __future__ import division
 #import json
 
 #import module_twitterscraping as twscrap
