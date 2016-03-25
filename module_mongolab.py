@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+from __future__ import division
 #import json
 
 #import module_twitterscraping as twscrap
@@ -37,6 +38,11 @@ def communitySize(text, i):
     community_i = raw_result['communities'][i]
     result = len(community_i['screen_names'])
     return result
+
+def communitySizePercent(text, i):
+    comSize = communitySize(text, i)
+    totalSize = communitySize(text, 0) + communitySize(text, 1) + communitySize(text, 2) + communitySize(text, 3)
+    return comSize/totalSize * 100
 
 #Download query result from Mongolab (replace collection by collection name before running)
 #def downloadFromMongolab():

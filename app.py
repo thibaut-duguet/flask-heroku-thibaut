@@ -44,10 +44,15 @@ def results(query):
     communitySize2 = mlab.communitySize(query,1)
     communitySize3 = mlab.communitySize(query,2)
     communitySize4 = mlab.communitySize(query,3)
+    communityPercent1 = mlab.communitySizePercent(query,0)
+    communityPercent2 = mlab.communitySizePercent(query,1)
+    communityPercent3 = mlab.communitySizePercent(query,2)
+    communityPercent4 = mlab.communitySizePercent(query,3)
     return render_template('results.html', community1 = json.dumps(community1), community2 = json.dumps(community2),
         community3 = json.dumps(community3), community4 = json.dumps(community4), communitySize1 = communitySize1,
         communitySize2 = communitySize2, communitySize3 = communitySize3, communitySize4 = communitySize4,
-        query = query)
+        communityPercent1 = communityPercent1, communityPercent2 = communityPercent2, communityPercent3 = communityPercent3,
+        communityPercent4 = communityPercent4, query = query)
 
 @app.route('/about/')
 def about():
