@@ -43,7 +43,7 @@ def results(query):
     communitySize1 = mlab.communitySize(query,0)
     communitySize2 = mlab.communitySize(query,1)
     communitySize3 = mlab.communitySize(query,2)
-    communitySize4 = mlab.communityPSize(query,3)
+    communitySize4 = mlab.communitySize(query,3)
     return render_template('results.html', community1 = json.dumps(community1), community2 = json.dumps(community2),
         community3 = json.dumps(community3), community4 = json.dumps(community4), communitySize1 = communitySize1,
         communitySize2 = communitySize2, communitySize3 = communitySize3, communitySize4 = communitySize4,
