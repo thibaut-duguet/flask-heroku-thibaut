@@ -92,8 +92,8 @@
                     <p>{{ communitySize1 }} Twitter accounts ({{ communityPercent1 }} % of the considered accounts).</p>
                     <div id = "keywords" class="col-md-6"></div>
                     <script type="text/javascript">
-                        function test_func(result) {
-                            var words = result['words'];
+                        function test_func(words) {
+                            //var words = result['words'];
                             $('#keywords').jQCloud(words);
                         }
                         test_func({{ community1|safe }})
@@ -108,8 +108,8 @@
                     <p>{{ communitySize2 }} Twitter accounts ({{ communityPercent2 }} % of the considered accounts).</p>
                     <div id = "keywordsa" class="col-md-6"></div>
                     <script type="text/javascript">
-                        function test_func(result) {
-                            var words = result['words'];
+                        function test_func(words) {
+                            //var words = result['words'];
                             $('#keywordsa').jQCloud(words);
                         }
                         test_func({{ community2|safe }})
@@ -128,8 +128,8 @@
                     <p>{{ communitySize3 }} Twitter accounts ({{ communityPercent3 }} % of the considered accounts).</p>
                     <div id = "keywordsb" class="col-md-6"></div>
                     <script type="text/javascript">
-                        function test_func(result) {
-                            var words = result['words'];
+                        function test_func(words) {
+                            //var words = result['words'];
                             $('#keywordsb').jQCloud(words);
                         }
                         test_func({{ community3|safe }})
