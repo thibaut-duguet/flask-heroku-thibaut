@@ -46,7 +46,13 @@ def communitySizePercent(text, i):
 def communityWords(text, i):
     raw_result = getCommunityInfo(text)
     community_i = raw_result['communities'][i]
-    return community_i['words'][:30]
+    max_weight = community_i['words'][0]['weight']
+    factor = 3
+    results = []
+    for i in range(len(community_i['words'])):
+        if community_i['words'][i]['weight'] > max_weight/factor:
+            results.append(community_i['words'][i])
+    return results
 
 #Download query result from Mongolab (replace collection by collection name before running)
 #def downloadFromMongolab():
