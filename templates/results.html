@@ -94,7 +94,13 @@
                     <script type="text/javascript">
                         function test_func(words) {
                             //var words = result['words'];
-                            $('#keywords').jQCloud(words);
+                            $('#keywords').jQCloud(words, {
+                                                  autoResize: true,
+                                                  fontSize: {
+                                                        from: 0.5,
+                                                        to: 0.02
+                                                      }
+                                                });
                         }
                         test_func({{ communityWords1|safe }})
                     </script>
@@ -110,7 +116,13 @@
                     <script type="text/javascript">
                         function test_func(words) {
                             //var words = result['words'];
-                            $('#keywordsa').jQCloud(words);
+                            $('#keywordsa').jQCloud(words, {
+                                                  autoResize: true,
+                                                  fontSize: {
+                                                        from: 0.3,
+                                                        to: 0.02
+                                                      }
+                                                });
                         }
                         test_func({{ communityWords2|safe }})
                     </script>
@@ -130,7 +142,13 @@
                     <script type="text/javascript">
                         function test_func(words) {
                             //var words = result['words'];
-                            $('#keywordsb').jQCloud(words);
+                            $('#keywordsb').jQCloud(words, {
+                                                  autoResize: true,
+                                                  fontSize: {
+                                                        from: 0.08,
+                                                        to: 0.02
+                                                      }
+                                                });
                         }
                         test_func({{ communityWords3|safe }})
                     </script>
@@ -145,7 +163,13 @@
                     <script type="text/javascript">
                         function test_func(words) {
                             //var words = result['words'];
-                            $('#keywordsc').jQCloud(words);
+                            $('#keywordsc').jQCloud(words, {
+                                                  autoResize: true,
+                                                  fontSize: {
+                                                        from: 0.04,
+                                                        to: 0.02
+                                                      }
+                                                });
                         }
                         test_func({{ communityWords4|safe }})
                     </script>
