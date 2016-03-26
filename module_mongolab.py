@@ -43,6 +43,11 @@ def communitySizePercent(text, i):
     totalSize = communitySize(text, 0) + communitySize(text, 1) + communitySize(text, 2) + communitySize(text, 3)
     return format(comSize/float(totalSize) * 100, '.2f')
 
+def communityWords(text, i):
+    raw_result = getCommunityInfo(text)
+    community_i = raw_result['communities'][i]
+    return community_i['words'][:10]
+
 #Download query result from Mongolab (replace collection by collection name before running)
 #def downloadFromMongolab():
 #    results = db.collection.find()

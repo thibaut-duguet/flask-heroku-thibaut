@@ -36,10 +36,10 @@ def hello_post():
 
 @app.route('/results/<query>')
 def results(query):
-    community1 = mlab.communityInfo(query,0)
-    community2 = mlab.communityInfo(query,1)
-    community3 = mlab.communityInfo(query,2)
-    community4 = mlab.communityInfo(query,3)
+    communityWords1 = mlab.communityWords(query,0)
+    communityWords2 = mlab.communityWords(query,1)
+    communityWords3 = mlab.communityWords(query,2)
+    communityWords4 = mlab.communityWords(query,3)
     communitySize1 = mlab.communitySize(query,0)
     communitySize2 = mlab.communitySize(query,1)
     communitySize3 = mlab.communitySize(query,2)
@@ -48,8 +48,8 @@ def results(query):
     communityPercent2 = mlab.communitySizePercent(query,1)
     communityPercent3 = mlab.communitySizePercent(query,2)
     communityPercent4 = mlab.communitySizePercent(query,3)
-    return render_template('results.html', community1 = json.dumps(community1), community2 = json.dumps(community2),
-        community3 = json.dumps(community3), community4 = json.dumps(community4), communitySize1 = communitySize1,
+    return render_template('results.html', communityWords1 = json.dumps(communityWords1), communityWords2 = json.dumps(communityWords2),
+        communityWords3 = json.dumps(communityWords3), communityWords4 = json.dumps(communityWords4), communitySize1 = communitySize1,
         communitySize2 = communitySize2, communitySize3 = communitySize3, communitySize4 = communitySize4,
         communityPercent1 = communityPercent1, communityPercent2 = communityPercent2, communityPercent3 = communityPercent3,
         communityPercent4 = communityPercent4, query = query)

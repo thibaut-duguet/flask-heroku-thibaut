@@ -143,11 +143,11 @@
                     <p>{{ communitySize4 }} Twitter accounts ({{ communityPercent4 }} % of the considered accounts).</p>
                     <div id = "keywordsc" class="col-md-6"></div>
                     <script type="text/javascript">
-                        function test_func(result) {
-                            var words = result['words'];
+                        function test_func(words) {
+                            //var words = result['words'];
                             $('#keywordsc').jQCloud(words);
                         }
-                        test_func({{ community4|safe }})
+                        test_func({{ communityWords4|safe }})
                     </script>
                     <!--<script src = "{{ url_for('static', filename='test-jqcloud.js') }}"></script>-->
                 </div>
