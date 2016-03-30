@@ -47,7 +47,7 @@ def communityWords(text, i):
     raw_result = getCommunityInfo(text)
     community_i = raw_result['communities'][i]
     max_weight = community_i['words'][0]['weight']
-    factor = 4
+    factor = 3
     results = []
     for i in range(len(community_i['words'])):
         if community_i['words'][i]['weight'] > max_weight/factor:
