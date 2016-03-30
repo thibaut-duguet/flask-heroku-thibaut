@@ -24,7 +24,7 @@ body {
 
 .text-vertical-center h1 {
     margin: 0;
-    padding: 0;
+    padding: 20px 0px 0px 0px;
     font-size: 4.5em;
     font-weight: 700;
 }
