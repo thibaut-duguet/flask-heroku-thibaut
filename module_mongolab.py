@@ -1,7 +1,4 @@
 from pymongo import MongoClient
-#import json
-
-#import module_twitterscraping as twscrap
 
 #Ouverture de la connexion Mongolab
 client = MongoClient("mongodb://Thibaut:EnsaeTwitter16@ds055865.mlab.com:55865/ensae_twitter")
@@ -13,11 +10,19 @@ def uploadToMongolab(text):
     if line != "\n":
       db.twitter_query.insert_one(line)
 
-def alreadyInCollection(text):
+def notAlreadyInCollectionQuery(text):
+    text = text.strip().lower()
     if db.twitter_query.find({'query': text}).count() > 0:
-        return True
-    else:
         return False
+    else:
+        return True
+
+def notAlreadyInCollectionCommunity(text):
+    text = text.strip().lower()
+    if db.twitter_community.find({'query': text}).count() > 0:
+        return False
+    else:
+        return True
 
 def getCommunityInfo(text):
     results_cursor = db.twitter_community.find({'query': text})
@@ -54,11 +59,4 @@ def communityWords(text, i):
             results.append(community_i['words'][i])
     return results
 
-#Download query result from Mongolab (replace collection by collection name before running)
-#def downloadFromMongolab():
-#    results = db.collection.find()
-#    for result in results:
-        #do whatever you need
-
-#uploadJsonToMongolab("president2.json")
 client.close()

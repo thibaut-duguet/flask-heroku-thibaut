@@ -3,7 +3,6 @@ Flask Documentation:     http://flask.pocoo.org/docs/
 Jinja2 Documentation:    http://jinja.pocoo.org/2/documentation/
 Werkzeug Documentation:  http://werkzeug.pocoo.org/documentation/
 
-This file creates your application.
 """
 
 import os
@@ -28,11 +27,15 @@ def hello():
 @app.route('/', methods=['POST'])
 def hello_post():
     text = request.form['text']
-    if mlab.alreadyInCollection(text):
-        return redirect(url_for('results', query = text))
-    else:
+    text = text.strip().lower()
+    if mlab.notAlreadyInCollectionQuery(text):
         mlab.uploadToMongolab(text)
         return render_template('index1.html')
+    else:
+        if mlab.notAlreadyInCollectionCommunity(text):
+            return render_template('index1.html')
+        else:
+            return redirect(url_for('results', query = text))
 
 @app.route('/results/<query>')
 def results(query):
@@ -58,28 +61,6 @@ def results(query):
 def about():
     """Render the website's about page."""
     return render_template('results.html')
-
-
-###
-# The functions below should be applicable to all Flask apps.
-###
-
-#@app.route('/<file_name>.txt')
-#def send_text_file(file_name):
-#    """Send your static text file."""
-#    file_dot_text = file_name + '.txt'
-#    return app.send_static_file(file_dot_text)
-
-
-#@app.after_request
-#def add_header(response):
-#    """
-#    Add headers to both force latest IE rendering engine or Chrome Frame,
-#    and also to cache the rendered page for 10 minutes.
-#    """
-#    response.headers['X-UA-Compatible'] = 'IE=Edge,chrome=1'
-#    response.headers['Cache-Control'] = 'public, max-age=600'
-#    return response
 
 
 @app.errorhandler(404)
